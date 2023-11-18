@@ -12,9 +12,15 @@ from service.common import log_handlers
 # Import Flask-Talisman
 from flask_talisman import Talisman
 
+# Import Flask-CORS
+from flask_cors import CORS
+
 # Create Flask application
 app = Flask(__name__)
 app.config.from_object(config)
+
+# Create an instance of the CORS class and pass in the Flask app
+cors = CORS(app)
 
 # Import the routes After the Flask app is created
 # pylint: disable=wrong-import-position, cyclic-import, wrong-import-order
